@@ -56,32 +56,6 @@ void Game::initialize()
 	glLoadIdentity();
 	gluPerspective(45.0, window.getSize().x / window.getSize().y, 1.0, 500.0);
 	glMatrixMode(GL_MODELVIEW);
-
-	// glNewList(index, GL_COMPILE);
-	// Creates a new Display List
-	// Initalizes and Compiled to GPU
-	// https://www.opengl.org/sdk/docs/man2/xhtml/glNewList.xml
-	glNewList(index, GL_COMPILE);
-	glBegin(GL_QUADS);
-	{
-		//Front Face
-		glColor3f(0.0f, 0.0f, 1.0f);
-		glVertex3f(cubePoints.at(0).x, cubePoints.at(0).y, cubePoints.at(0).z);
-		glVertex3f(cubePoints.at(1).x, cubePoints.at(1).y, cubePoints.at(1).z);
-		glVertex3f(cubePoints.at(2).x, cubePoints.at(2).y, cubePoints.at(2).z);
-		glVertex3f(cubePoints.at(3).x, cubePoints.at(3).y, cubePoints.at(3).z);
-
-		//Back Face
-		glColor3f(0.0f, 1.0f, 0.0f);
-		glVertex3f(cubePoints.at(4).x, cubePoints.at(4).y, cubePoints.at(4).z);
-		glVertex3f(cubePoints.at(5).x, cubePoints.at(5).y, cubePoints.at(5).z);
-		glVertex3f(cubePoints.at(6).x, cubePoints.at(6).y, cubePoints.at(6).z);
-		glVertex3f(cubePoints.at(7).x, cubePoints.at(7).y, cubePoints.at(7).z);
-
-		//Complete the faces of the Cube
-	}
-	glEnd();
-	glEndList();
 }
 
 void Game::update()
@@ -121,9 +95,26 @@ void Game::draw()
 
 	cout << "Drawing Cube " << endl;
 	glLoadIdentity();
-	glRotatef(rotationAngle, 0, 0, 1); // Rotates the camera on Y Axis
 
-	glCallList(1);
+	//drawing the cube 
+	glBegin(GL_QUADS);
+	{
+		//Front Face
+		glColor3f(0.0f, 0.0f, 1.0f);
+		glVertex3f(cubePoints.at(0).x, cubePoints.at(0).y, cubePoints.at(0).z);
+		glVertex3f(cubePoints.at(1).x, cubePoints.at(1).y, cubePoints.at(1).z);
+		glVertex3f(cubePoints.at(2).x, cubePoints.at(2).y, cubePoints.at(2).z);
+		glVertex3f(cubePoints.at(3).x, cubePoints.at(3).y, cubePoints.at(3).z);
+
+		//Back Face
+		glColor3f(0.0f, 1.0f, 0.0f);
+		glVertex3f(cubePoints.at(4).x, cubePoints.at(4).y, cubePoints.at(4).z);
+		glVertex3f(cubePoints.at(5).x, cubePoints.at(5).y, cubePoints.at(5).z);
+		glVertex3f(cubePoints.at(6).x, cubePoints.at(6).y, cubePoints.at(6).z);
+		glVertex3f(cubePoints.at(7).x, cubePoints.at(7).y, cubePoints.at(7).z);
+
+	}
+	glEnd();
 
 	window.display();
 
