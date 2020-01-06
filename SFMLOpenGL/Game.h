@@ -9,7 +9,6 @@
 
 using namespace std;
 using namespace sf;
-using namespace gpp;
 
 class Game
 {
@@ -30,4 +29,6 @@ private:
 	Time elapsed;
 
 	float rotationAngle = 0.0f;
+
+	std::vector<db::Vector3> cubePoints;
 };

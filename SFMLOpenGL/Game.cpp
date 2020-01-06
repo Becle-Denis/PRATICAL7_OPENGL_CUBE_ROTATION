@@ -2,11 +2,23 @@
 
 bool updatable = false;
 
-gpp::Vector3 v3;
-
 Game::Game() : window(VideoMode(800, 600), "OpenGL Cube")
 {
 	index = glGenLists(1);
+
+	//setting the base cube
+
+	//FACE
+	cubePoints.push_back(db::Vector3(-2.0f, 2.0f, -10.0f));  //POINT A / 0 
+	cubePoints.push_back(db::Vector3(2.0f, 2.0f, -10.0f));   //POINT B / 1 
+	cubePoints.push_back(db::Vector3(2.0f, -2.0f, -10.0f));  //POINT C / 2 
+	cubePoints.push_back(db::Vector3(-2.0f, -2.0f, -10.0f)); //POINT D / 3 
+
+	//BACK 
+	cubePoints.push_back(db::Vector3(-2.0f, 2.0f, -14.0f));  //POINT E / 4 
+	cubePoints.push_back(db::Vector3(2.0f, 2.0f, -14.0f));   //POINT F / 5 
+	cubePoints.push_back(db::Vector3(2.0f, -2.0f, -14.0f));  //POINT G / 6 
+	cubePoints.push_back(db::Vector3(-2.0f, -2.0f, -14.0f)); //POINT H / 7 
 }
 
 Game::~Game(){}
@@ -54,17 +66,17 @@ void Game::initialize()
 	{
 		//Front Face
 		glColor3f(0.0f, 0.0f, 1.0f);
-		glVertex3f(v3.getX(), 1.0f, -5.0f);
-		glVertex3f(-1.0f, 1.0f, -5.0f);
-		glVertex3f(-1.0f, -1.0f, -5.0f);
-		glVertex3f(1.0f, -1.0f, -5.0f);
+		glVertex3f(cubePoints.at(0).x, cubePoints.at(0).y, cubePoints.at(0).z);
+		glVertex3f(cubePoints.at(1).x, cubePoints.at(1).y, cubePoints.at(1).z);
+		glVertex3f(cubePoints.at(2).x, cubePoints.at(2).y, cubePoints.at(2).z);
+		glVertex3f(cubePoints.at(3).x, cubePoints.at(3).y, cubePoints.at(3).z);
 
 		//Back Face
 		glColor3f(0.0f, 1.0f, 0.0f);
-		glVertex3f(1.0f, 1.0f, -15.0f);
-		glVertex3f(-1.0f, 1.0f, -15.0f);
-		glVertex3f(-1.0f, -1.0f, -15.0f);
-		glVertex3f(1.0f, -1.0f, -15.0f);
+		glVertex3f(cubePoints.at(4).x, cubePoints.at(4).y, cubePoints.at(4).z);
+		glVertex3f(cubePoints.at(5).x, cubePoints.at(5).y, cubePoints.at(5).z);
+		glVertex3f(cubePoints.at(6).x, cubePoints.at(6).y, cubePoints.at(6).z);
+		glVertex3f(cubePoints.at(7).x, cubePoints.at(7).y, cubePoints.at(7).z);
 
 		//Complete the faces of the Cube
 	}
