@@ -110,6 +110,42 @@ void Game::draw()
 		glVertex3f(cubePoints.at(2).x, cubePoints.at(2).y, cubePoints.at(2).z);
 		glVertex3f(cubePoints.at(3).x, cubePoints.at(3).y, cubePoints.at(3).z);
 
+		// CDG (2,3,6)
+		glColor3f(0.5f, 0.0f, 0.0f);
+		glVertex3f(cubePoints.at(2).x, cubePoints.at(2).y, cubePoints.at(2).z);
+		glVertex3f(cubePoints.at(3).x, cubePoints.at(3).y, cubePoints.at(3).z); 
+		glVertex3f(cubePoints.at(6).x, cubePoints.at(6).y, cubePoints.at(6).z);
+
+		//DGH (3,6,7)
+		glColor3f(0.8f, 0.0f, 0.0f);
+		glVertex3f(cubePoints.at(3).x, cubePoints.at(3).y, cubePoints.at(3).z);
+		glVertex3f(cubePoints.at(6).x, cubePoints.at(6).y, cubePoints.at(6).z);
+		glVertex3f(cubePoints.at(7).x, cubePoints.at(7).y, cubePoints.at(7).z);
+
+		//DEH (3,4,7)
+		glColor3f(0.0f, 0.5f, 0.0f);
+		glVertex3f(cubePoints.at(3).x, cubePoints.at(3).y, cubePoints.at(3).z);
+		glVertex3f(cubePoints.at(4).x, cubePoints.at(4).y, cubePoints.at(4).z);
+		glVertex3f(cubePoints.at(7).x, cubePoints.at(7).y, cubePoints.at(7).z);
+
+		//ADE (0,3,4)
+		glColor3f(0.0f, 0.8f, 0.0f);
+		glVertex3f(cubePoints.at(0).x, cubePoints.at(0).y, cubePoints.at(0).z);
+		glVertex3f(cubePoints.at(3).x, cubePoints.at(3).y, cubePoints.at(3).z);
+		glVertex3f(cubePoints.at(4).x, cubePoints.at(4).y, cubePoints.at(4).z);
+
+		//EGH (4,6,7)
+
+		//EFG (4,5,6)
+
+		//BCG (1,2,6)
+
+		//BFG (1,5,6)
+
+		//ABE (0,1,4)
+
+		//BEF (1,4,5)
+
 
 	}
 	glEnd();
