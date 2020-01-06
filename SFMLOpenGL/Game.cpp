@@ -95,8 +95,26 @@ void Game::draw()
 
 	cout << "Drawing Cube " << endl;
 	glLoadIdentity();
-
 	//drawing the cube 
+	glBegin(GL_TRIANGLES);
+	{
+		// ABD (0,1,3)
+		glColor3f(0.0f, 0.0f, 0.8f);
+		glVertex3f(cubePoints.at(0).x, cubePoints.at(0).y, cubePoints.at(0).z);
+		glVertex3f(cubePoints.at(1).x, cubePoints.at(1).y, cubePoints.at(1).z);
+		glVertex3f(cubePoints.at(3).x, cubePoints.at(3).y, cubePoints.at(3).z);
+
+		// BCD (1,2,3)
+		glColor3f(0.0f, 0.0f, 0.5f);
+		glVertex3f(cubePoints.at(1).x, cubePoints.at(1).y, cubePoints.at(1).z);
+		glVertex3f(cubePoints.at(2).x, cubePoints.at(2).y, cubePoints.at(2).z);
+		glVertex3f(cubePoints.at(3).x, cubePoints.at(3).y, cubePoints.at(3).z);
+
+
+	}
+	glEnd();
+
+	/*
 	glBegin(GL_QUADS);
 	{
 		//Front Face
@@ -115,7 +133,7 @@ void Game::draw()
 
 	}
 	glEnd();
-
+	*/
 	window.display();
 
 }
