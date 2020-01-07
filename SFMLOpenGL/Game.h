@@ -28,5 +28,5 @@ private:
 
 	std::vector<db::Vector3> cubePoints;
 
-	sf::Clock rotationCLock;
+	sf::Clock movementCLock;
 };
