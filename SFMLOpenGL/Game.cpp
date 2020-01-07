@@ -116,6 +116,44 @@ void Game::update()
 		}
 	}
 
+
+	//ROTATION 
+	db::Vector3 center;
+	center.x = (cubePoints.at(0).x + cubePoints.at(1).x + cubePoints.at(2).x + cubePoints.at(3).x + cubePoints.at(4).x + cubePoints.at(5).x + cubePoints.at(6).x + cubePoints.at(7).x ) / 8;
+	center.y = (cubePoints.at(0).y + cubePoints.at(1).y + cubePoints.at(2).y + cubePoints.at(3).y + cubePoints.at(4).y + cubePoints.at(5).y + cubePoints.at(6).y + cubePoints.at(7).y) / 8;
+	center.z = (cubePoints.at(0).z + cubePoints.at(1).z + cubePoints.at(2).z + cubePoints.at(3).z + cubePoints.at(4).z + cubePoints.at(5).z + cubePoints.at(6).z + cubePoints.at(7).z) / 8;
+	db::Matrix3 matrix;
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+	{
+		for (db::Vector3& v : cubePoints)
+		{
+			v = v - center;
+			v = v * matrix.rotationX(1);
+			v = v + center;
+		}
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
+	{
+		for (db::Vector3& v : cubePoints)
+		{
+			v = v - center;
+			v = v * matrix.rotationY(1);
+			v = v + center;
+		}
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+	{
+		for (db::Vector3& v : cubePoints)
+		{
+			v = v - center;
+			v = v * matrix.rotationZ(1);
+			v = v + center;
+		}
+	}
+
+	
+	
 }
 
 void Game::draw()
