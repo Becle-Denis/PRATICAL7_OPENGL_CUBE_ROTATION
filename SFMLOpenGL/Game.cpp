@@ -148,40 +148,31 @@ void Game::draw()
 
 		//BCG (1,2,6)
 		glColor3f(0.0f, 0.5f, 0.5f);
+		glVertex3f(cubePoints.at(1).x, cubePoints.at(1).y, cubePoints.at(1).z);
+		glVertex3f(cubePoints.at(2).x, cubePoints.at(2).y, cubePoints.at(2).z);
+		glVertex3f(cubePoints.at(6).x, cubePoints.at(6).y, cubePoints.at(6).z);
 
 		//BFG (1,5,6)
 		glColor3f(0.0f, 0.8f, 0.8f);
+		glVertex3f(cubePoints.at(1).x, cubePoints.at(1).y, cubePoints.at(1).z);
+		glVertex3f(cubePoints.at(5).x, cubePoints.at(5).y, cubePoints.at(5).z);
+		glVertex3f(cubePoints.at(6).x, cubePoints.at(6).y, cubePoints.at(6).z);
 
 		//ABE (0,1,4)
 		glColor3f(0.5f, 0.0f, 0.5f);
+		glVertex3f(cubePoints.at(0).x, cubePoints.at(0).y, cubePoints.at(0).z);
+		glVertex3f(cubePoints.at(1).x, cubePoints.at(1).y, cubePoints.at(1).z);
+		glVertex3f(cubePoints.at(4).x, cubePoints.at(4).y, cubePoints.at(4).z);
 
 		//BEF (1,4,5)
 		glColor3f(0.8f, 0.0f, 0.8f);
-
-
-	}
-	glEnd();
-
-	/*
-	glBegin(GL_QUADS);
-	{
-		//Front Face
-		glColor3f(0.0f, 0.0f, 1.0f);
-		glVertex3f(cubePoints.at(0).x, cubePoints.at(0).y, cubePoints.at(0).z);
 		glVertex3f(cubePoints.at(1).x, cubePoints.at(1).y, cubePoints.at(1).z);
-		glVertex3f(cubePoints.at(2).x, cubePoints.at(2).y, cubePoints.at(2).z);
-		glVertex3f(cubePoints.at(3).x, cubePoints.at(3).y, cubePoints.at(3).z);
-
-		//Back Face
-		glColor3f(0.0f, 1.0f, 0.0f);
 		glVertex3f(cubePoints.at(4).x, cubePoints.at(4).y, cubePoints.at(4).z);
 		glVertex3f(cubePoints.at(5).x, cubePoints.at(5).y, cubePoints.at(5).z);
-		glVertex3f(cubePoints.at(6).x, cubePoints.at(6).y, cubePoints.at(6).z);
-		glVertex3f(cubePoints.at(7).x, cubePoints.at(7).y, cubePoints.at(7).z);
 
 	}
 	glEnd();
-	*/
+
 	window.display();
 
 }
