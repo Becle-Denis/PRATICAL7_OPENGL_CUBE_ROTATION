@@ -61,6 +61,61 @@ void Game::update()
 {
 	cout << "Update up" << endl;
 
+	//---------------TRANSLATE ----------------------------------------------
+	//moving far
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	{
+		for (db::Vector3& v : cubePoints)
+		{
+			v.z -= 0.01;
+		}
+	}
+
+	//moving near 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	{
+		for (db::Vector3& v : cubePoints)
+		{
+			v.z += 0.01;
+		}
+	}
+
+	//moving left 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		for (db::Vector3& v : cubePoints)
+		{
+			v.x -= 0.01;
+		}
+	}
+
+	//moving right 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		for (db::Vector3& v : cubePoints)
+		{
+			v.x += 0.01;
+		}
+	}
+
+	//moving up 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		for (db::Vector3& v : cubePoints)
+		{
+			v.y += 0.01;
+		}
+	}
+
+	//moving down 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		for (db::Vector3& v : cubePoints)
+		{
+			v.y -= 0.01;
+		}
+	}
+
 }
 
 void Game::draw()
