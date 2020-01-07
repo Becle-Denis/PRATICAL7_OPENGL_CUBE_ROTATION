@@ -4,21 +4,6 @@ bool updatable = false;
 
 Game::Game() : window(VideoMode(800, 600), "OpenGL Cube")
 {
-	index = glGenLists(1);
-
-	//setting the base cube
-
-	//FACE
-	cubePoints.push_back(db::Vector3(-2.0f, 2.0f, -10.0f));  //POINT A / 0 
-	cubePoints.push_back(db::Vector3(2.0f, 2.0f, -10.0f));   //POINT B / 1 
-	cubePoints.push_back(db::Vector3(2.0f, -2.0f, -10.0f));  //POINT C / 2 
-	cubePoints.push_back(db::Vector3(-2.0f, -2.0f, -10.0f)); //POINT D / 3 
-
-	//BACK 
-	cubePoints.push_back(db::Vector3(-2.0f, 2.0f, -14.0f));  //POINT E / 4 
-	cubePoints.push_back(db::Vector3(2.0f, 2.0f, -14.0f));   //POINT F / 5 
-	cubePoints.push_back(db::Vector3(2.0f, -2.0f, -14.0f));  //POINT G / 6 
-	cubePoints.push_back(db::Vector3(-2.0f, -2.0f, -14.0f)); //POINT H / 7 
 }
 
 Game::~Game(){}
@@ -56,35 +41,26 @@ void Game::initialize()
 	glLoadIdentity();
 	gluPerspective(45.0, window.getSize().x / window.getSize().y, 1.0, 500.0);
 	glMatrixMode(GL_MODELVIEW);
+
+
+	//setting the base cube
+	//FACE
+	cubePoints.push_back(db::Vector3(-2.0f, 2.0f, -10.0f));  //POINT A / 0 
+	cubePoints.push_back(db::Vector3(2.0f, 2.0f, -10.0f));   //POINT B / 1 
+	cubePoints.push_back(db::Vector3(2.0f, -2.0f, -10.0f));  //POINT C / 2 
+	cubePoints.push_back(db::Vector3(-2.0f, -2.0f, -10.0f)); //POINT D / 3 
+
+	//BACK 
+	cubePoints.push_back(db::Vector3(-2.0f, 2.0f, -14.0f));  //POINT E / 4 
+	cubePoints.push_back(db::Vector3(2.0f, 2.0f, -14.0f));   //POINT F / 5 
+	cubePoints.push_back(db::Vector3(2.0f, -2.0f, -14.0f));  //POINT G / 6 
+	cubePoints.push_back(db::Vector3(-2.0f, -2.0f, -14.0f)); //POINT H / 7 
 }
 
 void Game::update()
 {
-	elapsed = clock.getElapsedTime();
-
-	if (elapsed.asSeconds() >= 1.0f)
-	{
-		clock.restart();
-
-		if (!updatable)
-		{
-			updatable = true;
-		}
-		else
-			updatable = false;
-	}
-
-	if (updatable)
-	{
-		rotationAngle += 0.005f;
-
-		if (rotationAngle > 360.0f)
-		{
-			rotationAngle -= 360.0f;
-		}
-	}
-	
 	cout << "Update up" << endl;
+
 }
 
 void Game::draw()

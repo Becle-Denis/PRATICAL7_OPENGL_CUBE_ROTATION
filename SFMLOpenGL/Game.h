@@ -5,6 +5,7 @@
 #include <gl/GLU.h>
 
 #include "Vector3.h"
+#include "Matrix3.h"
 
 
 using namespace std;
@@ -18,17 +19,12 @@ public:
 	void run();
 private:
 	Window window;
+
 	bool isRunning = false;
 	void initialize();
 	void update();
 	void draw();
 	void unload();
-
-	GLuint index;
-	Clock clock;
-	Time elapsed;
-
-	float rotationAngle = 0.0f;
 
 	std::vector<db::Vector3> cubePoints;
 };
