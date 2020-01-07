@@ -27,4 +27,6 @@ private:
 	void unload();
 
 	std::vector<db::Vector3> cubePoints;
+
+	sf::Clock rotationCLock;
 };
